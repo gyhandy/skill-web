@@ -155,3 +155,34 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.quote-container {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin-top: 100px;
+  position: relative;
+}
+
+.quote-text {
+  font-size: 2em;
+  display: inline;
+}
+
+.quote-text:before, .quote-text:after {
+  content: '"';
+  font-size: 0.6em;
+  color: #FF6347; /* Change this to any color you prefer for the quotation marks */
+}
+
+.quote-author {
+  font-size: 1.2em;
+  text-align: right;
+  margin-top: 0.2em;
+  display: block;
+}
+
+.bolder {
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

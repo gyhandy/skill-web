@@ -7,7 +7,7 @@
         content="Lightweight Learner for Shared Knowledge Lifelong Learning.">
   <meta name="keywords" content="Lifelong Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lightweight Learner for Shared Knowledge Lifelong Learning</title>
+  <title>Shared Knowledge Lifelong Learning (SKILL)</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -33,7 +33,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/ilab0.jpg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -80,7 +80,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Lightweight Learner for Shared Knowledge Lifelong Learning</h1>
+          <h1 class="title is-1 publication-title">Shared Knowledge Lifelong Learning (SKILL)</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://gyhandy.github.io/">Yunhao Ge</a><sup>1</sup>,</span>        
@@ -159,9 +159,9 @@
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video> -->
-      <img src="static/images/Fig-3.png" alt="Main Figure">
+      <img src="static/images/video.gif" alt="Main Figure">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">LLL</span> enables cheap communication between numerous learning agent in different areas with their own unique knowledge.
+        <span class="dnerf">SKILL</span> enables cheap communication between numerous learning agent in different areas with their own unique knowledge.
       </h2>
     </div>
   </div>
@@ -273,31 +273,128 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Key Idea</h2>
+        <h2 class="title is-3">Why we care "share knowledge" in LL</h2>
         <div class="content has-text-justified">
-          <p>
-            Each agent in our system possesses a pre-trained general model with a small, 
-            flexible component tailored to one or more specific tasks. 
-            Simultaneously, each agent has a task mapper that helps identify 
-            the task at hand. The flexible component can be shared and transferred 
-            among agents, with the task mapper deciding which component to use.
-          </p>
+          <div class="quote-container">
+            <p class="quote-text">We may add a quote here if appropriate</p>
+            <p class="quote-author">- XX XX</p>
+          </div>
+          <ul>
+            <li>
+              <p>
+                <strong>Physical Constrain: </strong>Diverse tasks may occur in varying locations. 
+                Multiple agents will each acquire unique skills, 
+                eventually leading to a situation where each agent can master all tasks.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Speed: </strong>Communication is crucial to humans for accelerated learning, 
+                yet its significance in the context of Intelligent Agents is not sufficiently highlighted. 
+                An efficient communication among Agents can speed up learning for certain task which is learned by any agent but not others. 
+                After a quick communication, all agents can master all tasks 
+                even when they have only been trained on a small or an empty subset of all tasks.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">Difference between SKILL with other learning paradigm</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/Fig-skill-1.png" alt="Main Figure">
+          <ul>
+            <li>
+              <p>
+                <strong>Multi-task learning: </strong>one agent learns all tasks at the same time in the same physical location
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Sequential Lifelong Learning: </strong>one agent learns all tasks sequentially in one location, 
+                deploying LL-specific machinery to avoid task interference. 
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Federated learning: </strong>multiple agents learn the same task
+                in different physical locations, then sharing learned knowledge (parameters) with a center agent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="bolder">Our SKILL: </span> different S-LL agents in different physical regions each learn tasks, and learned knowledge is shared
+                among all agents, such that finally all agents can solve all tasks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Challenges of task</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              <p>
+                <strong>Distributed, decentralized learning of multiple tasks: </strong>A solution to SKILL should support a
+                population of agents deployed over several physical locations and each learning one or more sequential
+                tasks. For resilience reasons, the population should not rely on a single central server.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Lifelong learning ability: </strong>Each agent must be capable of lifelong learning, i.e., learning a sequence
+                of tasks with minimal interference and no access to previous data as each new task is learned.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Shareable knowledge representation: </strong>The knowledge representation should easily be shared
+                and understood among agents. Agents must be able to consolidate knowledge from other agents in
+                a decentralized, distributed fashion.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Speedup through parallelization: </strong>Shared knowledge should be sufficiently compact, so that the 
+                benefits from using multiple parallel agents are not erased by communications costs. 
+                Adding more agents should result in greater speedup compared to a single agent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Ability to harness possible synergies among tasks: </strong>When possible, learning some tasks may
+                improve learning speed or performance at other, related tasks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Lightweight lifelong learner to solve SKILL</h2>
+        <img src="static/images/Fig-3.png" alt="Main Figure">
         <div class="content has-text-justified">
           <p>
             Our primary methodology focuses on image classification tasks. 
-            We utilize weights pre-trained on ImageNet as our fixed backbone. 
+            Each agent in our system possesses a pre-trained general model with a small, 
+            flexible component tailored to one or more specific tasks. We utilize weights pre-trained on ImageNet as our fixed backbone. 
             After each convolutional layer, we insert a learnable bias layer that varies for each task. 
             Additionally, each agent learns a task-specific linear head for classification. 
-            For the task mapper, we extract features from all images using a 
+            Simultaneously, each agent has a task mapper that helps identify 
+            the task at hand. we extract features from all images using a 
             fixed pre-trained ResNet-50 backbone, and a Gaussian mixture model 
-            is learned for these features to facilitate future task classification.
+            is learned for these features to facilitate future task classification. 
+            The flexible component can be shared and transferred 
+            among agents, with the task mapper deciding which component to use.
           </p>
         </div>
       </div>
