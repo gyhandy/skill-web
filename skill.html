@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- @TODO I am not sure what an anlytic code here means -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Lightweight Learner for Shared Knowledge Lifelong Learning.">
+  <meta name="keywords" content="Lifelong Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared Knowledge Lifelong Learning (SKILL)</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./skill/css/bulma.min.css">
+  <link rel="stylesheet" href="./skill/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./skill/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./skill/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./skill/css/index.css">
+  <link rel="icon" href="./skill/images/ilab0.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./skill/js/fontawesome.all.min.js"></script>
+  <script src="./skill/js/bulma-carousel.min.js"></script>
+  <script src="./skill/js/bulma-slider.min.js"></script>
+  <script src="./skill/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://gyhandy.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://gyhandy.github.io/">
+            Results
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Shared Knowledge Lifelong Learning (SKILL)</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://gyhandy.github.io/">Yunhao Ge</a><sup>1</sup>,</span>        
+            <span class="author-block">
+              <a href="https://harry-li-27.github.io/">Yuecheng Li</a><sup>1 *</sup>,</span>
+            <span class="author-block">
+              <a>Di Wu</a><sup>1 *</sup>,</span>
+            <span class="author-block">
+              <a>Ao Xu</a><sup>1 *</sup>,</span>
+            <span class="author-block">
+              <a>Adam M. Jones</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Amanda Sofie Rios</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a>Iordanis Fostiropoulos</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Shixian Wen</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a>Po-Hsuan Huang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Zachary William Murdock</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Gozde Sahin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Shuo Ni</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Kiran Lekkala</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Sumedh Anand Sontakke</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Laurent Itti</a><sup>1, 2, 5</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Thomas Lord Department of Computer Science, University of Southern California,</span>
+            <span class="author-block"><sup>2</sup>Neuroscience Graduate Program, University of Southern California</span>
+            <span class="author-block"><sup>3</sup>Intel Labs</span>
+            <span class="author-block"><sup>4</sup>Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences</span>
+            <span class="author-block"><sup>5</sup>Dornsife Department of Psychology, University of Southern California</span>
+            <span class="author-block"><sup>*</sup>Equal contribution as second author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.15591"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.15591"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/gyhandy/Shared-Knowledge-Lifelong-Learning"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./skill/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <img src="skill/images/video-l.gif" alt="Main Figure">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">SKILL</span> is a new lifelong learning paradigm, 
+        which allow LL agents to share knowledge among each other, in the end, add agents master on all tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./skill/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>
+              tl;dr The SKILL challenge involves decentralized lifelong learning 
+              agents sequentially mastering tasks and sharing knowledge, enabling all to master all tasks.
+            </strong>
+          </p>
+          <p>
+            In Lifelong Learning (LL), agents continually learn as they encounter new conditions and
+            tasks. Most current LL is limited to a single agent that learns tasks sequentially. Dedicated LL machinery 
+            is then deployed to mitigate the forgetting of old tasks as new tasks are
+            learned. This is inherently slow. We propose a new Shared Knowledge Lifelong Learning
+            (SKILL) challenge, which deploys a decentralized population of LL agents that each sequentially learn different tasks, 
+            with all agents operating independently and in parallel. After
+            learning their respective tasks, agents share and consolidate their knowledge over a decentralized communication 
+            network.
+            Every agent improves its ability to solve new tasks each time new
+            task-specific modules and anchors are received. If all agents can communicate with all others,
+            eventually all agents become identical and can solve all tasks. 
+            <!-- On a new, very challenging
+            SKILL-102 dataset with 102 image classification tasks (5,033 classes in total, 2,041,225
+            training, 243,464 validation, and 243,464 test images), we achieve much higher (and SOTA)
+            accuracy over 8 LL baselines, while also achieving near perfect parallelization.  -->
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why we care "Shared Knowledge" in LL</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              <p>
+                <strong>Physical Constrain: </strong>Diverse tasks may occur in varying locations. 
+                Multiple agents will each acquire unique skills, 
+                eventually leading to a situation where each agent can master all tasks.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Speed: </strong>Communication is crucial to humans for accelerated learning, 
+                yet its significance in the context of Intelligent Agents is not sufficiently highlighted. 
+                An efficient communication among Agents can speed up learning for certain task which is learned by any agent but not others. 
+                After a quick communication, all agents can master all tasks 
+                even when they have only been trained on a small or an empty subset of all tasks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Difference between SKILL with other learning paradigm</h2>
+        <div class="content has-text-justified">
+          <img src="skill/images/Fig-skill-1.png" alt="Main Figure">
+          <ul>
+            <li>
+              <p>
+                <strong>Multi-task learning: </strong>one agent learns all tasks at the same time in the same physical location
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Sequential Lifelong Learning: </strong>one agent learns all tasks sequentially in one location, 
+                deploying LL-specific machinery to avoid task interference. 
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Federated learning: </strong>multiple agents learn the same task
+                in different physical locations, then sharing learned knowledge (parameters) with a center agent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="bolder">Our SKILL: </span> different S-LL agents in different physical regions each learn tasks, and learned knowledge is shared
+                among all agents, such that finally all agents can solve all tasks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Challenges of task</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              <p>
+                <strong>Distributed, decentralized learning of multiple tasks: </strong>A solution to SKILL should support a
+                population of agents deployed over several physical locations and each learning one or more sequential
+                tasks. For resilience reasons, the population should not rely on a single central server.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Lifelong learning ability: </strong>Each agent must be capable of lifelong learning, i.e., learning a sequence
+                of tasks with minimal interference and no access to previous data as each new task is learned.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Shareable knowledge representation: </strong>The knowledge representation should easily be shared
+                and understood among agents. Agents must be able to consolidate knowledge from other agents in
+                a decentralized, distributed fashion.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Speedup through parallelization: </strong>Shared knowledge should be sufficiently compact, so that the 
+                benefits from using multiple parallel agents are not erased by communications costs. 
+                Adding more agents should result in greater speedup compared to a single agent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Ability to harness possible synergies among tasks: </strong>When possible, learning some tasks may
+                improve learning speed or performance at other, related tasks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Lightweight lifelong learner(LLL) to solve SKILL</h2>
+        <img src="skill/images/Fig-3.png" alt="Main Figure">
+        <div class="content has-text-justified">
+          <p>
+            We present
+            one solution to SKILL which uses Lightweight Lifelong Learning (LLL) agents, where the
+            goal is to facilitate efficient sharing by minimizing the fraction of the agent that is specialized
+            for any given task. Each LLL agent thus consists of a common task-agnostic immutable part,
+            where most parameters are, and individual task-specific modules that contain fewer parameters but are adapted to each task. 
+            Agents share their task-specific modules, plus summary
+            information ("task anchors") representing their tasks in the common task-agnostic latent
+            space of all agents. Receiving agents register each received task-specific module using the corresponding anchor.
+            <!-- Our primary methodology focuses on image classification tasks. 
+            Each agent in our system possesses a pre-trained general model with a small, 
+            flexible component tailored to one or more specific tasks. We utilize weights pre-trained on ImageNet as our fixed backbone. 
+            After each convolutional layer, we insert a learnable bias layer that varies for each task. 
+            Additionally, each agent learns a task-specific linear head for classification. 
+            Simultaneously, each agent has a task mapper that helps identify 
+            the task at hand. we extract features from all images using a 
+            fixed pre-trained ResNet-50 backbone, and a Gaussian mixture model 
+            is learned for these features to facilitate future task classification. 
+            The flexible component can be shared and transferred 
+            among agents, with the task mapper deciding which component to use. -->
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ge2023lightweight,
+      title={Lightweight Learner for Shared Knowledge Lifelong Learning},
+      author={Ge, Yunhao and Li, Yuecheng and Wu, Di and Xu, Ao and Jones, Adam M and Rios, Amanda Sofie and Fostiropoulos, Iordanis and Wen, Shixian and Huang, Po-Hsuan and Murdock, Zachary William and others},
+      journal={arXiv preprint arXiv:2305.15591},
+      year={2023}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2305.15591">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/gyhandy/Shared-Knowledge-Lifelong-Learning" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            The template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and
+            we sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
