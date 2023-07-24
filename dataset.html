@@ -311,6 +311,40 @@
         </div>
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Computation and communication costs with Continuous Learning methods</h2>
+        <h4 class="title is-3" style="font-size: 30px; color: gray;">Single</h4>
+        <img src="static/images/single-consumption.PNG" alt="Main Figure">
+        <p>
+          Training time consumption for all methods using a single agent.
+        </p>
+        <br>
+        <h4 class="title is-3" style="font-size: 30px; color: gray;">Parallel</h4>
+        <img src="static/images/parallel consumption.PNG" alt="Main Figure">
+        <p>
+          Training time consumption for methods using multiple agents learning in parallel. 
+        </p>
+
+        <div class="content has-text-justified">      
+          <ul>
+            <li>
+              Teacher CPU: number of Multiply-Accumulate Operations needed for the teacher to learn the task
+            </li>
+            <li>
+              Communication: the memory size of the data needed to be transferred
+            </li>
+            <li>
+              Student CPU: number of Multiply-Accumulate Operations needed for the student to learn the task after receiving knowledge form the teacher
+            </li>
+            <li>
+              Parallelization efficiency: total MACs for a single agent divided by total MACs for parallel agents and by N
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     
   </div>
 </section>
