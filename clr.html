@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!-- @TODO I am not sure what an anlytic code here means -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CLR: Channel-wise Lightweight Reprogramming for Continual Learning">
+  <meta name="keywords" content="Lifelong Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLR: Channel-wise Lightweight Reprogramming for Continual Learning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ilab0.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://gyhandy.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://gyhandy.github.io/">
+            Results
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CLR: Channel-wise Lightweight Reprogramming for Continual Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://gyhandy.github.io/">Yunhao Ge</a><sup>1</sup>,</span>        
+            <span class="author-block">
+              <a href="https://harry-li-27.github.io/">Yuecheng Li</a><sup>1 *</sup>,</span>
+            <span class="author-block">
+              <a>Shuo Ni</a><sup>1 *</sup>,</span>
+            <span class="author-block">
+              <a>Jiaping Zhao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Ming-Hsuan Yang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Laurent Itti</a><sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Southern California,</span>
+            <span class="author-block"><sup>2</sup>Google Research,</span>
+            <span class="author-block"><sup>*</sup>Equal contribution as second author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2307.11386.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2307.11386.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/gyhandy/Channel-wise-Lightweight-Reprogramming"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <img src="clr/Main-figure.png" alt="Main Figure">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">CLR</span> adds lightweight task-specific reprogramming 
+        parameters for each task to learn multiple tasks without catastrophy forgetting. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>
+              tl;dr We propose a Channel-wise
+              Lightweight Reprogramming (CLR) approach that helps
+              convolutional neural networks (CNNs) overcome catastrophic forgetting during continual learning.
+            </strong>
+          </p>
+          <p>
+            Continual learning aims to emulate the human ability to continually accumulate knowledge over sequential
+            tasks. The main challenge is to maintain performance on
+            previously learned tasks after learning new tasks, i.e., to
+            avoid catastrophic forgetting. We show that
+            a CNN model trained on an old task (or self-supervised
+            proxy task) could be “reprogrammed” to solve a new task
+            by using our proposed lightweight (very cheap) reprogramming parameter. 
+            With the help of CLR, we have a better stability-plasticity trade-off to solve continual learning
+            problems: To maintain stability and retain previous task
+            ability, we use a common task-agnostic immutable part as
+            the shared “anchor” parameter set. We then add taskspecific lightweight reprogramming 
+            parameters to reinterpret the outputs of the immutable parts, to enable plasticity and integrate new knowledge. To learn sequential
+            tasks, we only train the lightweight reprogramming parameters to learn each new task. Reprogramming parameters
+            are task-specific and exclusive to each task, which makes
+            our method immune to catastrophic forgetting. To minimize the parameter requirement of reprogramming to learn
+            new tasks, we make reprogramming lightweight by only adjusting essential kernels and learning channel-wise linear
+            mappings from anchor parameters to task-specific domain
+            knowledge. We show that, for general CNNs, the CLR parameter increase is less than 0.6% for any new task. Our
+            method outperforms 11 state-of-the-art continual learning
+            baselines on a new challenging sequence of 53 image classification datasets
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <img src="clr/Main-method.png" alt="Main Figure">
+            <p>
+                Our proposed Channel-wise Lightweight Reprogramming (CLR) method leverages a static, 
+                task-independent backbone and introduces task-specific reprogramming parameters for new tasks. 
+                This approach uses channel-wise linear transformation to reprogram the feature map produced by a 
+                regular convolutional kernel, generating a unique task-specific feature map. 
+                Here, the linear transformation is represented with 3x3 2D convolutional kernels
+                conducted on single channel feature map.
+                This CLR method is 
+                compatible with all Convolutional Neural Networks (CNNs), transforming each existing Conv block 
+                into a CLR Conv block by integrating a CLR layer. 
+            </p>
+            
+          </div>
+        </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <img src="clr/results.PNG" alt="Main Figure">
+            <p>
+                We evaluated our methods against prior continual learning benchmarks across a sequence of 53 datasets, 
+                achieving state-of-the-art (SOTA) performance. Besides delivering the highest accuracy, our methods 
+                stand out by requiring the least memory and minimum computational resources compared to all other 
+                approaches that deliver satisfactory performance (accuracy > 50 %).
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Transfer Learning</h2>
+          <div class="content has-text-justified">
+            <img src="clr/Transfer-results.PNG" alt="Main Figure">
+            <p>
+            Due to the nature design of the algorithm. CLR can also be applied to transfer learning. 
+            Our method achieves
+            the best average accuracy on the 53-dataset compared with
+            all baselines. Specifically, CLR achieves almost 5% average
+            improvement on 53 datasets over Head2Toe, and even larger
+            improvement over LINEAR, FINETUNE, and SCRATCH.
+            This shows the effectiveness of the CLR-based model in
+            transfer learning problems.
+            </p>
+            
+          </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ge2023clr,
+        title={CLR: Channel-wise Lightweight Reprogramming for Continual Learning},
+        author={Ge, Yunhao and Li, Yuecheng and Ni, Shuo and Zhao, Jiaping and Yang, Ming-Hsuan and Itti, Laurent},
+        journal={arXiv preprint arXiv:2307.11386},
+        year={2023}
+      }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2307.11386.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/gyhandy/Channel-wise-Lightweight-Reprogramming" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            The template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and
+            we sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
