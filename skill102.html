@@ -26,20 +26,20 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./102-dataset/css/bulma.min.css">
+  <link rel="stylesheet" href="./102-dataset/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./102-dataset/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./102-dataset/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/ilab0.jpg">
+  <link rel="stylesheet" href="./102-dataset/css/index.css">
+  <link rel="icon" href="./102-dataset/images/ilab0.jpg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./102-dataset/js/fontawesome.all.min.js"></script>
+  <script src="./102-dataset/js/bulma-carousel.min.js"></script>
+  <script src="./102-dataset/js/bulma-slider.min.js"></script>
+  <script src="./102-dataset/js/index.js"></script>
 </head>
 <body>
 
@@ -128,7 +128,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://openreview.net/pdf?id=Jjl2c8kWUc"
+                <a href="https://arxiv.org/abs/2305.15591"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -137,12 +137,12 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="http://ilab.usc.edu/andy/skill"
+                <a href="https://arxiv.org/abs/2305.15591"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>SKILL task</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -192,8 +192,15 @@
       </video> -->
       <!-- <img src="static/images/video-m.gif" alt="Main Figure"> -->
       <h2 class="subtitle has-text-centered">
-        <span class="bolder">102 Dataset</span> contains 102 datasets across Fine-grained task such as Flower-102, medical image tasks, and others.
-        It is used for Lifelong learning. 
+        <span class="bolder">SKILL-102</span> consists of 102 image classification datasets. 
+        Each one supports one complex classification task, and the corresponding dataset was obtained from previously 
+        published sources (e.g., task 1: classify flowers into 102 classes, such as lily, rose, petunia, 
+        etc using 8,185 train/val/test images (Nilsback & Zisserman, 2008a); task 2: classify 67 types of scenes, 
+        such as kitchen, bedroom, gas station, library, etc using 15,524 images (Quattoni & Torralba, 2009).
+        In total, SKILL-102 comprises 102 tasks, 5,033 classes, and 2,041,225 training images. 
+        To the best of our knowledge, SKILL-102 is the most challenging completely real 
+        (not synthesized or permuted) image classification benchmark for LL and SKILL algorithms, 
+        with the largest number of tasks, number of classes, and inter-task variance.
       </h2>
     </div>
   </div>
@@ -257,27 +264,27 @@
   </div>
 </section> -->
 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Download</h2>
+    <h3>Single File Option</h3>
+    <pre><code>      $ wget http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip
+      $ unzip SKILL-Dataset-backend.zip</code></pre>
+    <h3>Multiple Files Option(~600G per file)</h3>
+    <pre><code>      $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z01
+      $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z02
+      $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.zip
+      $ unzip skill-dataset.zip</code></pre>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Download</h2>
-        <div class="content has-text-justified">
-          <pre><code>
-            $ wget http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip
-            $ unzip SKILL-Dataset-backend.zip
-      </code></pre>
-        </div>
-      </div>
-    </div>
-
     <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
             <h2 class="title is-3">Compared with other Lifelong learning benchmark</h2>
             <div class="content has-text-justified">
-                <img src="102 dataset/dataset_plot.PNG" alt="Main Figure">
+                <img src="./102-dataset/images/dataset_plot.PNG" alt="Main Figure">
                 <p>
                 (a) SKILL-102 dataset visualization. Task difficulty (y-axis) was estimated as the error rate of a
                 ResNet-18 trained from scratch on each task for a fixed number of epochs. Circle size reflects dataset size
@@ -294,7 +301,7 @@
         <div class="column is-four-fifths">
             <h2 class="title is-3">Results with Continuous Learning methods</h2>
             <div class="content has-text-justified">
-                <img src="102 dataset/Capture1.PNG" alt="Main Figure">
+                <img src="./102-dataset/images/Capture1.PNG" alt="Main Figure">
                 <p>
                     Result of average absolute accuracy on all tasks learned so far, as a function of the number of tasks learned. 
                     The sharp decrease in early tasks carries no special meaning except for the fact that tasks 4,8,10 are significantly harder than the other tasks in the 0-10 range, 
@@ -302,13 +309,47 @@
                 </p>
             </div>
             <div class="content has-text-justified">
-              <img src="102 dataset/task1_acc.PNG" alt="Main Figure">
+              <img src="./102-dataset/images/task1_acc.PNG" alt="Main Figure">
               <p>
                 Accuracy on task 1 (learning to classify 102 types of flowers) as a function of the number of tasks
                 learned.
               </p>
           </div>
         </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Computation and communication costs with Continuous Learning methods</h2>
+        <h4 class="title is-3" style="font-size: 30px; color: gray;">Single</h4>
+        <img src="static/images/single-consumption.PNG" alt="Main Figure">
+        <p>
+          Training time consumption for all methods using a single agent.
+        </p>
+        <br>
+        <h4 class="title is-3" style="font-size: 30px; color: gray;">Parallel</h4>
+        <img src="static/images/parallel consumption.PNG" alt="Main Figure">
+        <p>
+          Training time consumption for methods using multiple agents learning in parallel. 
+        </p>
+
+        <div class="content has-text-justified">      
+          <ul>
+            <li>
+              Teacher CPU: number of Multiply-Accumulate Operations needed for the teacher to learn the task
+            </li>
+            <li>
+              Communication: the memory size of the data needed to be transferred
+            </li>
+            <li>
+              Student CPU: number of Multiply-Accumulate Operations needed for the student to learn the task after receiving knowledge form the teacher
+            </li>
+            <li>
+              Parallelization efficiency: total MACs for a single agent divided by total MACs for parallel agents and by N
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     
@@ -325,9 +366,7 @@
       author={Ge, Yunhao and Li, Yuecheng and Wu, Di and Xu, Ao and Jones, Adam M and Rios, Amanda Sofie and Fostiropoulos, Iordanis and Wen, Shixian and Huang, Po-Hsuan and Murdock, Zachary William and others},
       journal={arXiv preprint arXiv:2305.15591},
       year={2023}
-    }
-    
-}</code></pre>
+    }</code></pre>
     <p>
         We also extend to 107 for more details on how to create:link to here
     </p>
