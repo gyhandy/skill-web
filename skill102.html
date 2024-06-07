@@ -167,13 +167,33 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip"
+                <a id="multipleDownloadBtn"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                </a>
+                <script>
+                  document.getElementById('multipleDownloadBtn').addEventListener('click', function() {
+                      const urls = [
+                      "http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z01",
+                      "http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z02",
+                      "http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.zip"
+                      ];
+          
+                      urls.forEach((url, index) => {
+                        setTimeout(() => {
+                            const link = document.createElement('a');
+                            link.href = url;
+                            link.download = url.split('/').pop();
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }, index * 100); // Minimal delay between each download
+                    });
+                });
+              </script>
             </div>
 
           </div>
@@ -267,10 +287,6 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Download</h2>
-    <h3>Single File Option</h3>
-    <pre><code>      $ wget http://ilab.usc.edu/andy/skill-dataset/skill/SKILL-Dataset-backend.zip
-      $ unzip SKILL-Dataset-backend.zip</code></pre>
-    <h3>Multiple Files Option(~600G per file)</h3>
     <pre><code>      $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z01
       $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.z02
       $ wget http://ilab.usc.edu/andy/skill-dataset/separate-v/skill-dataset.zip
